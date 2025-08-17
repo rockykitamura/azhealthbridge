@@ -1,8 +1,17 @@
+import { 
+  InformationCircleIcon, 
+  CheckCircleIcon, 
+  ExclamationTriangleIcon, 
+  XCircleIcon,
+  LightBulbIcon,
+  XMarkIcon
+} from '@heroicons/react/24/outline';
+
 export function Alert({ 
   children, 
   variant = 'info',
   title,
-  icon,
+  icon: IconComponent,
   dismissible = false,
   onDismiss,
   className = '',
@@ -19,14 +28,14 @@ export function Alert({
   };
   
   const defaultIcons = {
-    info: 'ℹ️',
-    success: '✅',
-    warning: '⚠️',
-    error: '❌',
-    neutral: '💡',
+    info: InformationCircleIcon,
+    success: CheckCircleIcon,
+    warning: ExclamationTriangleIcon,
+    error: XCircleIcon,
+    neutral: LightBulbIcon,
   };
   
-  const displayIcon = icon || defaultIcons[variant];
+  const DisplayIcon = IconComponent || defaultIcons[variant];
   
   return (
     <div 
@@ -35,10 +44,8 @@ export function Alert({
       {...props}
     >
       <div className="flex items-start">
-        {displayIcon && (
-          <span className="text-2xl mr-4 flex-shrink-0" aria-hidden="true">
-            {displayIcon}
-          </span>
+        {DisplayIcon && (
+          <DisplayIcon className="h-6 w-6 mr-4 flex-shrink-0" aria-hidden="true" />
         )}
         
         <div className="flex-1">
@@ -55,10 +62,10 @@ export function Alert({
         {dismissible && (
           <button
             onClick={onDismiss}
-            className="ml-4 text-2xl opacity-60 hover:opacity-100 transition-opacity duration-200"
+            className="ml-4 opacity-60 hover:opacity-100 transition-opacity duration-200"
             aria-label="Dismiss alert"
           >
-            ✕
+            <XMarkIcon className="h-5 w-5" />
           </button>
         )}
       </div>
@@ -69,7 +76,7 @@ export function Alert({
 export function InfoBox({ 
   title, 
   children, 
-  icon = 'ℹ️',
+  icon: IconComponent = InformationCircleIcon,
   className = '',
   ...props 
 }) {
@@ -79,9 +86,7 @@ export function InfoBox({
       {...props}
     >
       <div className="flex items-start">
-        <span className="text-2xl mr-4 flex-shrink-0" aria-hidden="true">
-          {icon}
-        </span>
+        <IconComponent className="h-6 w-6 mr-4 flex-shrink-0" aria-hidden="true" />
         <div>
           {title && (
             <h4 className="text-xl font-semibold text-secondary-900 mb-2">

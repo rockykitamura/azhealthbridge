@@ -5,6 +5,21 @@ import { Badge, StatusBadge } from '../components/ui/Badge';
 import { Input, Select, Textarea } from '../components/ui/Input';
 import { Alert, InfoBox } from '../components/ui/Alert';
 import { Section, SectionHeader, Container, Grid } from '../components/ui/Section';
+import { 
+  ClipboardDocumentListIcon, 
+  BookOpenIcon, 
+  CheckIcon,
+  MapPinIcon,
+  DocumentTextIcon,
+  MagnifyingGlassIcon,
+  CalendarDaysIcon,
+  EnvelopeIcon,
+  ChatBubbleBottomCenterTextIcon,
+  GlobeAltIcon,
+  PhoneIcon,
+  DocumentMagnifyingGlassIcon,
+  LightBulbIcon
+} from '@heroicons/react/24/outline';
 
 export const meta = () => {
   return [
@@ -21,7 +36,7 @@ export default function Index() {
       {/* Hero Section */}
       <Section background="gradient" padding="2xl">
         <div className="text-center">
-          <Badge variant="primary" size="lg" icon="🌟" className="mb-6">
+          <Badge variant="primary" size="lg" icon={DocumentTextIcon} className="mb-6">
             2025 Medicare Plans Now Available
           </Badge>
           
@@ -36,25 +51,25 @@ export default function Index() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="primary" size="xl" icon="📋">
+            <Button variant="primary" size="xl" icon={ClipboardDocumentListIcon}>
               Compare 2025 Plans
             </Button>
-            <Button variant="outline" size="xl" icon="📚">
+            <Button variant="outline" size="xl" icon={BookOpenIcon}>
               Medicare Guide
             </Button>
           </div>
           
           <div className="mt-12 flex flex-wrap justify-center gap-6 text-lg">
             <div className="flex items-center gap-2">
-              <span className="text-sage-600 text-2xl">✓</span>
+              <CheckIcon className="h-6 w-6 text-sage-600" />
               <span className="text-neutral-700">Free Information</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-sage-600 text-2xl">✓</span>
+              <CheckIcon className="h-6 w-6 text-sage-600" />
               <span className="text-neutral-700">No Obligations</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-sage-600 text-2xl">✓</span>
+              <CheckIcon className="h-6 w-6 text-sage-600" />
               <span className="text-neutral-700">Easy to Understand</span>
             </div>
           </div>
@@ -88,23 +103,23 @@ export default function Index() {
             <CardContent>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <span className="text-sage-600 text-xl mt-1">✓</span>
+                  <CheckIcon className="h-5 w-5 text-sage-600 mt-1 flex-shrink-0" />
                   <span>Hospital & Medical coverage (Parts A & B)</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-sage-600 text-xl mt-1">✓</span>
+                  <CheckIcon className="h-5 w-5 text-sage-600 mt-1 flex-shrink-0" />
                   <span>Usually includes prescription drugs (Part D)</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-sage-600 text-xl mt-1">✓</span>
+                  <CheckIcon className="h-5 w-5 text-sage-600 mt-1 flex-shrink-0" />
                   <span>Extra benefits: dental, vision, hearing</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-sage-600 text-xl mt-1">✓</span>
+                  <CheckIcon className="h-5 w-5 text-sage-600 mt-1 flex-shrink-0" />
                   <span>$0 premium plans available</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-sage-600 text-xl mt-1">✓</span>
+                  <CheckIcon className="h-5 w-5 text-sage-600 mt-1 flex-shrink-0" />
                   <span>Fitness programs included</span>
                 </li>
               </ul>
@@ -127,23 +142,23 @@ export default function Index() {
             <CardContent>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <span className="text-sage-600 text-xl mt-1">✓</span>
+                  <CheckIcon className="h-5 w-5 text-sage-600 mt-1 flex-shrink-0" />
                   <span>Works with Original Medicare</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-sage-600 text-xl mt-1">✓</span>
+                  <CheckIcon className="h-5 w-5 text-sage-600 mt-1 flex-shrink-0" />
                   <span>No network restrictions</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-sage-600 text-xl mt-1">✓</span>
+                  <CheckIcon className="h-5 w-5 text-sage-600 mt-1 flex-shrink-0" />
                   <span>See any Medicare doctor nationwide</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-sage-600 text-xl mt-1">✓</span>
+                  <CheckIcon className="h-5 w-5 text-sage-600 mt-1 flex-shrink-0" />
                   <span>Predictable out-of-pocket costs</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-sage-600 text-xl mt-1">✓</span>
+                  <CheckIcon className="h-5 w-5 text-sage-600 mt-1 flex-shrink-0" />
                   <span>Foreign travel emergency coverage</span>
                 </li>
               </ul>
@@ -166,23 +181,23 @@ export default function Index() {
             <CardContent>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <span className="text-sage-600 text-xl mt-1">✓</span>
+                  <CheckIcon className="h-5 w-5 text-sage-600 mt-1 flex-shrink-0" />
                   <span>Coverage for prescription medications</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-sage-600 text-xl mt-1">✓</span>
+                  <CheckIcon className="h-5 w-5 text-sage-600 mt-1 flex-shrink-0" />
                   <span>Works with Original Medicare</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-sage-600 text-xl mt-1">✓</span>
+                  <CheckIcon className="h-5 w-5 text-sage-600 mt-1 flex-shrink-0" />
                   <span>Network pharmacies statewide</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-sage-600 text-xl mt-1">✓</span>
+                  <CheckIcon className="h-5 w-5 text-sage-600 mt-1 flex-shrink-0" />
                   <span>Mail-order options available</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-sage-600 text-xl mt-1">✓</span>
+                  <CheckIcon className="h-5 w-5 text-sage-600 mt-1 flex-shrink-0" />
                   <span>Extra Help programs for low income</span>
                 </li>
               </ul>
@@ -199,7 +214,7 @@ export default function Index() {
       {/* Info Box */}
       <Section padding="md">
         <Container size="sm">
-          <InfoBox title="Not Sure Which Plan is Right for You?" icon="💡">
+          <InfoBox title="Not Sure Which Plan is Right for You?" icon={LightBulbIcon}>
             Each Medicare plan type has its own advantages. Medicare Advantage offers convenience and extra benefits, 
             while Medicare Supplement provides flexibility and predictable costs. We're here to help you understand 
             your options without any pressure or obligations.
@@ -234,7 +249,7 @@ export default function Index() {
           ].map((county) => (
             <Card key={county} variant="default" hover padding="md">
               <div className="text-center">
-                <span className="text-3xl mb-2 block">📍</span>
+                <MapPinIcon className="h-8 w-8 mb-2 mx-auto text-primary-500" />
                 <p className="font-semibold text-lg text-neutral-800">{county}</p>
               </div>
             </Card>
@@ -253,7 +268,7 @@ export default function Index() {
           <Card variant="elevated" hover padding="lg">
             <div className="text-center">
               <div className="w-20 h-20 bg-secondary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-4xl">📖</span>
+                <BookOpenIcon className="h-10 w-10 text-secondary-600" />
               </div>
               <CardTitle size="md">Medicare Basics Guide</CardTitle>
               <CardDescription>
@@ -270,7 +285,7 @@ export default function Index() {
           <Card variant="elevated" hover padding="lg">
             <div className="text-center">
               <div className="w-20 h-20 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-4xl">🔍</span>
+                <MagnifyingGlassIcon className="h-10 w-10 text-primary-600" />
               </div>
               <CardTitle size="md">Plan Comparison Tool</CardTitle>
               <CardDescription>
@@ -287,7 +302,7 @@ export default function Index() {
           <Card variant="elevated" hover padding="lg">
             <div className="text-center">
               <div className="w-20 h-20 bg-sage-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-4xl">📅</span>
+                <CalendarDaysIcon className="h-10 w-10 text-sage-600" />
               </div>
               <CardTitle size="md">Enrollment Calendar</CardTitle>
               <CardDescription>
@@ -394,15 +409,9 @@ export default function Index() {
                 Your comprehensive Arizona Medicare information resource.
               </p>
               <div className="mt-6 flex gap-4">
-                <Button variant="ghost" size="sm">
-                  <span className="text-2xl">📧</span>
-                </Button>
-                <Button variant="ghost" size="sm">
-                  <span className="text-2xl">📘</span>
-                </Button>
-                <Button variant="ghost" size="sm">
-                  <span className="text-2xl">🐦</span>
-                </Button>
+                <Button variant="ghost" size="sm" icon={EnvelopeIcon} ariaLabel="Email" />
+                <Button variant="ghost" size="sm" icon={DocumentMagnifyingGlassIcon} ariaLabel="Resources" />
+                <Button variant="ghost" size="sm" icon={ChatBubbleBottomCenterTextIcon} ariaLabel="Contact" />
               </div>
             </div>
             

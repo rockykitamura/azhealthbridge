@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from '@remix-run/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -42,7 +43,11 @@ export function Navigation() {
             aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileMenuOpen}
           >
-            <span className="text-2xl">{mobileMenuOpen ? '✕' : '☰'}</span>
+            {mobileMenuOpen ? (
+              <XMarkIcon className="h-6 w-6" />
+            ) : (
+              <Bars3Icon className="h-6 w-6" />
+            )}
           </button>
         </div>
         

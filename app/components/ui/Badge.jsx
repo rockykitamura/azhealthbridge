@@ -1,8 +1,17 @@
+import { 
+  SparklesIcon, 
+  StarIcon, 
+  HandThumbUpIcon, 
+  ClockIcon, 
+  CheckIcon, 
+  XMarkIcon 
+} from '@heroicons/react/24/outline';
+
 export function Badge({ 
   children, 
   variant = 'default',
   size = 'md',
-  icon,
+  icon: IconComponent,
   className = '',
   ...props 
 }) {
@@ -29,7 +38,7 @@ export function Badge({
       className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
       {...props}
     >
-      {icon && <span className="mr-2">{icon}</span>}
+      {IconComponent && <IconComponent className="mr-2 h-4 w-4" />}
       {children}
     </span>
   );
@@ -37,12 +46,12 @@ export function Badge({
 
 export function StatusBadge({ status, className = '', ...props }) {
   const statusConfig = {
-    new: { variant: 'primary', text: 'New', icon: '✨' },
-    popular: { variant: 'secondary', text: 'Popular', icon: '⭐' },
-    recommended: { variant: 'sage', text: 'Recommended', icon: '👍' },
-    limited: { variant: 'warning', text: 'Limited Time', icon: '⏰' },
-    available: { variant: 'success', text: 'Available', icon: '✓' },
-    unavailable: { variant: 'danger', text: 'Not Available', icon: '✗' },
+    new: { variant: 'primary', text: 'New', icon: SparklesIcon },
+    popular: { variant: 'secondary', text: 'Popular', icon: StarIcon },
+    recommended: { variant: 'sage', text: 'Recommended', icon: HandThumbUpIcon },
+    limited: { variant: 'warning', text: 'Limited Time', icon: ClockIcon },
+    available: { variant: 'success', text: 'Available', icon: CheckIcon },
+    unavailable: { variant: 'danger', text: 'Not Available', icon: XMarkIcon },
   };
   
   const config = statusConfig[status] || statusConfig.available;

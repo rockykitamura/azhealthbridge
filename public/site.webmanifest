@@ -1,0 +1,26 @@
+{
+  "name": "AZ Health Bridge",
+  "short_name": "AZ Health",
+  "description": "Arizona Medicare information resource",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#f14e42",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+}

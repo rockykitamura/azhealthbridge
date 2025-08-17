@@ -1,0 +1,13 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with rounded corners -->
+  <rect width="256" height="256" rx="48" fill="#f14e42"/>
+  
+  <!-- Letter A for Arizona (larger, centered) -->
+  <path d="M88 176 L128 80 L168 176 M104 144 L152 144" stroke="white" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Health cross symbol in corner -->
+  <g transform="translate(176, 176)">
+    <rect x="-8" y="-32" width="16" height="64" fill="white" rx="4"/>
+    <rect x="-32" y="-8" width="64" height="16" fill="white" rx="4"/>
+  </g>
+</svg>

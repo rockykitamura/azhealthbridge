@@ -2,7 +2,7 @@ export function Button({
   children, 
   variant = 'primary', 
   size = 'lg', 
-  icon, 
+  icon: IconComponent, 
   fullWidth = false,
   onClick,
   disabled = false,
@@ -37,14 +37,14 @@ export function Button({
       aria-label={ariaLabel || children}
       {...props}
     >
-      {icon && <span className="mr-3 text-xl">{icon}</span>}
+      {IconComponent && <IconComponent className="mr-3 h-5 w-5" />}
       {children}
     </button>
   );
 }
 
 export function IconButton({ 
-  icon, 
+  icon: IconComponent, 
   ariaLabel, 
   variant = 'ghost', 
   size = 'md',
@@ -61,9 +61,15 @@ export function IconButton({
   };
   
   const sizes = {
-    sm: 'p-2 rounded-lg text-lg',
-    md: 'p-3 rounded-xl text-xl',
-    lg: 'p-4 rounded-2xl text-2xl',
+    sm: 'p-2 rounded-lg',
+    md: 'p-3 rounded-xl',
+    lg: 'p-4 rounded-2xl',
+  };
+  
+  const iconSizes = {
+    sm: 'h-4 w-4',
+    md: 'h-5 w-5',
+    lg: 'h-6 w-6',
   };
   
   return (
@@ -73,7 +79,7 @@ export function IconButton({
       aria-label={ariaLabel}
       {...props}
     >
-      {icon}
+      {IconComponent && <IconComponent className={iconSizes[size]} />}
     </button>
   );
 }
