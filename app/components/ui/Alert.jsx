@@ -86,7 +86,7 @@ export function InfoBox({
       {...props}
     >
       <div className="flex items-start">
-        <IconComponent className="h-6 w-6 mr-4 flex-shrink-0" aria-hidden="true" />
+        {typeof IconComponent === 'function' && <IconComponent className="h-6 w-6 mr-4 flex-shrink-0" aria-hidden="true" />}
         <div>
           {title && (
             <h4 className="text-xl font-semibold text-secondary-900 mb-2">

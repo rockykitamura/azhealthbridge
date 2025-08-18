@@ -37,7 +37,7 @@ export function Button({
       aria-label={ariaLabel || children}
       {...props}
     >
-      {IconComponent && <IconComponent className="mr-3 h-5 w-5" />}
+      {IconComponent && typeof IconComponent === 'function' && <IconComponent className="mr-3 h-5 w-5" />}
       {children}
     </button>
   );
@@ -79,7 +79,7 @@ export function IconButton({
       aria-label={ariaLabel}
       {...props}
     >
-      {IconComponent && <IconComponent className={iconSizes[size]} />}
+      {IconComponent && typeof IconComponent === 'function' && <IconComponent className={iconSizes[size]} />}
     </button>
   );
 }

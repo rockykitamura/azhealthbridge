@@ -38,7 +38,7 @@ export function Badge({
       className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
       {...props}
     >
-      {IconComponent && <IconComponent className="mr-2 h-4 w-4" />}
+      {IconComponent && typeof IconComponent === 'function' && <IconComponent className="mr-2 h-4 w-4" />}
       {children}
     </span>
   );

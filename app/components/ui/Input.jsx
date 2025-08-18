@@ -1,3 +1,5 @@
+import React from 'react';
+
 export function Input({ 
   label,
   id,
@@ -5,7 +7,7 @@ export function Input({
   placeholder,
   helper,
   error,
-  icon,
+  icon: IconComponent,
   required = false,
   disabled = false,
   className = '',
@@ -33,9 +35,9 @@ export function Input({
       )}
       
       <div className="relative">
-        {icon && (
+        {IconComponent && typeof IconComponent === 'function' && (
           <span className="absolute left-4 top-1/2 -translate-y-1/2 text-xl text-neutral-500">
-            {icon}
+            <IconComponent className="h-6 w-6" />
           </span>
         )}
         
@@ -49,7 +51,7 @@ export function Input({
             ${baseInputStyles}
             ${hasError ? errorStyles : normalStyles}
             ${disabled ? disabledStyles : ''}
-            ${icon ? 'pl-12' : ''}
+            ${IconComponent ? 'pl-12' : ''}
             ${inputClassName}
           `}
           aria-invalid={hasError}
