@@ -22,11 +22,11 @@ export function Navigation() {
           
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
+            <NavLink to="/coverage-guidelines">Coverage Guidelines</NavLink>
+            <NavLink to="/glossary">Medicare Glossary</NavLink>
             <NavLink href="#plans">Medicare Plans</NavLink>
-            <NavLink href="#counties">Service Areas</NavLink>
             <NavLink href="#resources">Resources</NavLink>
-            <NavLink href="#tools">Tools</NavLink>
-            <NavLink href="#contact">Contact</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
           </div>
           
           {/* CTA Button */}
@@ -55,19 +55,19 @@ export function Navigation() {
         {mobileMenuOpen && (
           <div className="lg:hidden py-6 border-t-2 border-neutral-200 animate-slide-up">
             <div className="flex flex-col space-y-4">
+              <MobileNavLink to="/coverage-guidelines" onClick={() => setMobileMenuOpen(false)}>
+                Coverage Guidelines
+              </MobileNavLink>
+              <MobileNavLink to="/glossary" onClick={() => setMobileMenuOpen(false)}>
+                Medicare Glossary
+              </MobileNavLink>
               <MobileNavLink href="#plans" onClick={() => setMobileMenuOpen(false)}>
                 Medicare Plans
-              </MobileNavLink>
-              <MobileNavLink href="#counties" onClick={() => setMobileMenuOpen(false)}>
-                Service Areas
               </MobileNavLink>
               <MobileNavLink href="#resources" onClick={() => setMobileMenuOpen(false)}>
                 Resources
               </MobileNavLink>
-              <MobileNavLink href="#tools" onClick={() => setMobileMenuOpen(false)}>
-                Tools
-              </MobileNavLink>
-              <MobileNavLink href="#contact" onClick={() => setMobileMenuOpen(false)}>
+              <MobileNavLink to="/contact" onClick={() => setMobileMenuOpen(false)}>
                 Contact
               </MobileNavLink>
               <button className="bg-primary-500 text-white px-6 py-4 rounded-xl font-semibold text-lg hover:bg-primary-600 transition-all duration-200 shadow-lg mt-4">
@@ -81,25 +81,39 @@ export function Navigation() {
   );
 }
 
-function NavLink({ href, children }) {
+function NavLink({ href, to, children }) {
+  const className = "text-lg font-medium text-neutral-700 hover:text-primary-600 transition-colors duration-200 relative group";
+  
+  if (to) {
+    return (
+      <Link to={to} className={className}>
+        {children}
+        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
+      </Link>
+    );
+  }
+  
   return (
-    <a
-      href={href}
-      className="text-lg font-medium text-neutral-700 hover:text-primary-600 transition-colors duration-200 relative group"
-    >
+    <a href={href} className={className}>
       {children}
       <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
     </a>
   );
 }
 
-function MobileNavLink({ href, onClick, children }) {
+function MobileNavLink({ href, to, onClick, children }) {
+  const className = "text-lg font-medium text-neutral-700 hover:text-primary-600 transition-colors duration-200 px-4 py-3 rounded-xl hover:bg-primary-50";
+  
+  if (to) {
+    return (
+      <Link to={to} onClick={onClick} className={className}>
+        {children}
+      </Link>
+    );
+  }
+  
   return (
-    <a
-      href={href}
-      onClick={onClick}
-      className="text-lg font-medium text-neutral-700 hover:text-primary-600 transition-colors duration-200 px-4 py-3 rounded-xl hover:bg-primary-50"
-    >
+    <a href={href} onClick={onClick} className={className}>
       {children}
     </a>
   );
