@@ -22,9 +22,9 @@ export function Navigation() {
           
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            <NavLink to="/coverage-guidelines">Coverage Guidelines</NavLink>
-            <NavLink to="/glossary">Medicare Glossary</NavLink>
-            <NavLink href="#plans">Medicare Plans</NavLink>
+            <NavLink to="/plan-finder">Find Plans</NavLink>
+            <NavLink to="/coverage-guidelines">Coverage</NavLink>
+            <NavLink to="/glossary">Glossary</NavLink>
             <NavLink href="#resources">Resources</NavLink>
             <NavLink to="/contact">Contact</NavLink>
           </div>
@@ -55,14 +55,14 @@ export function Navigation() {
         {mobileMenuOpen && (
           <div className="lg:hidden py-6 border-t-2 border-neutral-200 animate-slide-up">
             <div className="flex flex-col space-y-4">
+              <MobileNavLink to="/plan-finder" onClick={() => setMobileMenuOpen(false)}>
+                Find Plans
+              </MobileNavLink>
               <MobileNavLink to="/coverage-guidelines" onClick={() => setMobileMenuOpen(false)}>
-                Coverage Guidelines
+                Coverage
               </MobileNavLink>
               <MobileNavLink to="/glossary" onClick={() => setMobileMenuOpen(false)}>
-                Medicare Glossary
-              </MobileNavLink>
-              <MobileNavLink href="#plans" onClick={() => setMobileMenuOpen(false)}>
-                Medicare Plans
+                Glossary
               </MobileNavLink>
               <MobileNavLink href="#resources" onClick={() => setMobileMenuOpen(false)}>
                 Resources
